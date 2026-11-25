@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Pet&amp;Cat — modelo de site</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="css/site.css">
+</head>
+
+<body>
+    <header>
+        <div class="wrap top">
+            <div class="brand"><img src="assets/logo.webp" alt="Logo Pet&amp;Cat"><span>Pet&amp;Cat</span></div>
+            <nav role="tablist" aria-label="Seções do site">
+                <button role="tab" data-t="adocao" aria-selected="true">🐾 Adoção</button>
+                <button role="tab" data-t="doacao" aria-selected="false">💛 Doação</button>
+                <button role="tab" data-t="missao" aria-selected="false">🌿 Missão, Visão e Valores</button>
+                <button role="tab" data-t="entrar" aria-selected="false">🔑 Entrar</button>
+            </nav>
+        </div>
+    </header>
+
+    <section id="adocao">
+        <div class="hero a">
+            <div class="wrap">
+                <h1>Adote um amigo</h1>
+                <p>Dê um lar cheio de amor. Mude uma vida hoje.</p>
+            </div>
+        </div>
+        <main class="wrap">
+            <h2 style="margin-top:0">Como adotar</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="num">1</div>
+                    <h3>Preencha o formulário</h3>Escolha seu novo amigo e envie o formulário de adoção pela plataforma.
+                </div>
+                <div class="card">
+                    <div class="num">2</div>
+                    <h3>Entrevista</h3>A ONG conversa com você para combinar o pet ideal com o seu estilo de vida.
+                </div>
+                <div class="card">
+                    <div class="num">3</div>
+                    <h3>Adoção responsável</h3>Carinho garantido para toda a vida do animal. Você acompanha tudo pelo
+                    histórico.
+                </div>
+            </div>
+            <h2>Quem espera por você</h2>
+            <div class="chips" role="group" aria-label="Filtrar animais">
+                <button class="chip" data-f="todos" aria-pressed="true">Todos</button><button class="chip" data-f="cão"
+                    aria-pressed="false">🐶 Cães</button><button class="chip" data-f="gato" aria-pressed="false">🐱
+                    Gatos</button>
+            </div>
+            <div class="grid" id="pets"></div>
+            <p class="note">Animais e ONGs de exemplo, apenas para ilustrar o modelo de tela.</p>
+        </main>
+    </section>
+
+    <section id="doacao" hidden>
+        <div class="hero d">
+            <div class="wrap">
+                <h1>Como doar e quero ajudar</h1>
+                <p>Cada gesto salva uma vidinha. Doe alimentos e suprimentos para as ONGs parceiras.</p>
+            </div>
+        </div>
+        <main class="wrap">
+            <div class="grid">
+                <div class="card">
+                    <div class="ic">📦</div>
+                    <h3>Como doar</h3>Ração, cobertores e brinquedos entregues às ONGs parceiras.
+                </div>
+                <div class="card">
+                    <div class="ic">🙋</div>
+                    <h3>Quero ajudar</h3>Seja voluntário em feiras de adoção e eventos das ONGs.
+                </div>
+                <div class="card">
+                    <div class="ic">💚</div>
+                    <h3>Ajuda financeira</h3>Contribua por PIX e acompanhe o destino de cada doação.
+                </div>
+            </div>
+            <h2>Campanhas abertas</h2>
+            <div class="grid" id="camps"></div>
+            <h2>Ajuda por PIX</h2>
+            <div class="pix">
+                <div style="flex:1;min-width:200px">
+                    <h3>Transparência no destino</h3>
+                    <p>Prestamos contas do uso de cada doação às ONGs beneficiadas.</p>
+                </div>
+                <code id="pixk">ajuda@petcat.org</code><button class="btn" id="copy">Copiar chave</button>
+            </div>
+            <p class="note">Campanhas e chave PIX de exemplo, apenas para ilustrar o modelo de tela.</p>
+        </main>
+    </section>
+
+    <section id="missao" hidden>
+        <div class="hero m">
+            <div class="wrap">
+                <h1>Missão, visão e valores</h1>
+                <p>A Pet&amp;Cat conecta animais em situação de abandono ou resgate, ONGs de acolhimento e pessoas que
+                    querem adotar ou ajudar.</p>
+            </div>
+        </div>
+        <main class="wrap">
+            <div class="big">
+                <h3>🎯 Missão</h3>
+                <p>Promover o bem-estar animal por meio da adoção responsável e da arrecadação e distribuição de
+                    alimentos para ONGs, conectando adotantes, doadores e instituições de forma transparente, segura e
+                    eficiente, para reduzir o abandono e a fome entre animais domésticos.</p>
+            </div>
+            <div class="big v">
+                <h3>🌟 Visão</h3>
+                <p>Ser referência nacional na intermediação entre adotantes, doadores e ONGs, reconhecida pela
+                    credibilidade, transparência e impacto social, em uma sociedade onde nenhum animal fique sem
+                    alimentação adequada ou sem um lar seguro.</p>
+            </div>
+            <h2>Valores</h2>
+            <div class="grid" id="vals"></div>
+        </main>
+    </section>
+
+    <section id="entrar" hidden>
+        <div class="hero a">
+            <div class="wrap">
+                <h1>Entrar</h1>
+                <p>Acesse sua conta de adotante ou da sua ONG, ou cadastre sua ONG na plataforma.</p>
+            </div>
+        </div>
+        <main class="wrap">
+            <div class="segs" role="group" aria-label="Tipo de acesso">
+                <button class="seg" data-v="lad" aria-pressed="true">🐾 Login de adotante</button>
+                <button class="seg" data-v="long" aria-pressed="false">🏠 Login de ONG</button>
+                <button class="seg" data-v="cong" aria-pressed="false">📝 Cadastro de ONG</button>
+            </div>
+
+            <form class="fm" id="lad" data-ok="Login de exemplo realizado! Você seria levado à sua área de adotante.">
+                <h2>Login de adotante</h2>
+                <p class="sub">Entre para pedir uma adoção e acompanhar suas solicitações.</p>
+                <label for="a1">E-mail</label><input id="a1" type="email" placeholder="voce@email.com" required>
+                <label for="a2">Senha</label><input id="a2" type="password" placeholder="Sua senha" required>
+                <button class="btn" type="submit">Entrar</button>
+                <p class="note">Ainda não tem conta? O cadastro de adotante é confirmado por e-mail.</p>
+                <div class="msg" role="status" hidden></div>
+            </form>
+
+            <form class="fm" id="long" data-ok="Login de exemplo realizado! Você seria levado ao painel da ONG." hidden>
+                <h2>Login de ONG</h2>
+                <p class="sub">Gerencie animais, pedidos de adoção e campanhas de doação.</p>
+                <label for="o1">E-mail da ONG</label><input id="o1" type="email" placeholder="contato@suaong.org"
+                    required>
+                <label for="o2">Senha</label><input id="o2" type="password" placeholder="Sua senha" required>
+                <button class="btn" type="submit">Entrar no painel</button>
+                <p class="note">Sua ONG ainda não está na Pet&amp;Cat? Use a aba Cadastro de ONG.</p>
+                <div class="msg" role="status" hidden></div>
+            </form>
+
+            <form class="fm" id="cong"
+                data-ok="Cadastro de exemplo enviado! A ONG passaria por análise e você receberia um e-mail de confirmação."
+                hidden>
+                <h2>Cadastro de ONG</h2>
+                <p class="sub">Cadastre sua ONG para anunciar animais e receber doações.</p>
+                <label for="c1">Nome da ONG</label><input id="c1" required>
+                <label for="c2">CNPJ</label><input id="c2" inputmode="numeric" placeholder="00.000.000/0000-00"
+                    required>
+                <label for="c3">Nome do responsável</label><input id="c3" required>
+                <label for="c4">E-mail</label><input id="c4" type="email" required>
+                <label for="c5">Telefone ou WhatsApp</label><input id="c5" type="tel" required>
+                <div class="two">
+                    <div><label for="c6">Cidade</label><input id="c6" required></div>
+                    <div><label for="c7">UF</label><input id="c7" maxlength="2" required></div>
+                </div>
+                <label for="c8">Sobre a ONG</label><textarea id="c8" rows="3"
+                    placeholder="Conte um pouco sobre o trabalho da ONG"></textarea>
+                <label for="c9">Senha</label><input id="c9" type="password" minlength="8"
+                    placeholder="Mínimo de 8 caracteres" required>
+                <label for="c10">Confirmar senha</label><input id="c10" type="password" minlength="8" required>
+                <label class="chk"><input type="checkbox" required> Aceito os termos de uso e a política de
+                    privacidade</label>
+                <button class="btn" type="submit">Cadastrar ONG</button>
+                <div class="msg" role="status" hidden></div>
+            </form>
+            <p class="note" style="text-align:center">Telas de exemplo: nenhum dado é enviado ou salvo.</p>
+        </main>
+    </section>
+
+    <footer>Pet&amp;Cat · Projeto de TCC · ETEC Professor Horácio Augusto da Silveira · 2026</footer>
+
+    <script src="js/site.js"></script>
+</body>
+
+</html>

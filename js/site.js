@@ -1,0 +1,20 @@
+var pets = [["Mel", "cão", "🐶", "2 anos · porte médio", "Dócil, brincalhona e ótima com crianças."], ["Luna", "gato", "🐱", "1 ano · porte pequeno", "Curiosa e carinhosa, adora colo."], ["Thor", "cão", "🐶", "4 anos · porte grande", "Calmo e leal, ideal para quem tem quintal."], ["Nina", "gato", "🐱", "3 anos · porte pequeno", "Tranquila, perfeita para apartamento."], ["Bob", "cão", "🐶", "6 meses · filhote", "Cheio de energia e muito esperto."], ["Mimi", "gato", "🐱", "2 anos · porte pequeno", "Independente e muito afetuosa."]];
+var camps = [["Ração para 40 animais", "ONG Patas Amigas", "🥣", 68], ["Cobertores para o inverno", "ONG Lar dos Gatinhos", "🧣", 45], ["Brinquedos e caminhas", "ONG Amigo Fiel", "🧸", 82]];
+var vals = [["Respeito e bem-estar animal", "Animais são seres sencientes que merecem dignidade, cuidado e proteção."], ["Adoção responsável", "Compatibilidade entre animal e adotante e vínculo por toda a vida."], ["Transparência", "Prestação de contas clara sobre o destino das doações."], ["Responsabilidade social", "Menos abandono por meio de educação e conscientização."], ["Empatia e solidariedade", "Sensibilidade com a causa animal e com as dificuldades das ONGs."], ["Colaboração e comunidade", "Trabalho em rede entre empresas, ONGs, voluntários e poder público."]];
+var $ = function (s) { return document.querySelector(s) };
+function renderPets(f) { $("#pets").innerHTML = pets.filter(function (p) { return f === "todos" || p[1] === f }).map(function (p) { return '<div class="card pet"><div class="av">' + p[2] + '</div><h3>' + p[0] + '</h3><small>' + p[3] + '</small><p style="margin-bottom:12px">' + p[4] + '</p><button class="btn">Quero adotar</button></div>' }).join("") }
+renderPets("todos");
+$("#camps").innerHTML = camps.map(function (c) { return '<div class="card"><div class="ic">' + c[2] + '</div><h3>' + c[0] + '</h3><small>' + c[1] + '</small><div class="bar"><i style="width:' + c[3] + '%"></i></div><small>' + c[3] + '% da meta</small><br><button class="btn alt" style="margin-top:10px">Quero doar</button></div>' }).join("");
+$("#vals").innerHTML = vals.map(function (v, i) { return '<div class="card"><div class="num">' + (i + 1) + '</div><h3>' + v[0] + '</h3>' + v[1] + '</div>' }).join("");
+document.addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    if (b.dataset.f) { document.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", c === b) }); renderPets(b.dataset.f) }
+    else if (b.textContent === "Quero adotar") { b.textContent = "Solicitação enviada ✓"; b.classList.add("ok") }
+    else if (b.textContent === "Quero doar") { b.textContent = "Obrigado! 💚"; b.classList.add("ok") }
+});
+$("#copy").onclick = function () { var b = this; try { navigator.clipboard.writeText($("#pixk").textContent) } catch (e) { } b.textContent = "Chave copiada ✓" };
+document.querySelectorAll(".seg").forEach(function (b) { b.onclick = function () { document.querySelectorAll(".seg").forEach(function (x) { x.setAttribute("aria-pressed", x === b) }); document.querySelectorAll(".fm").forEach(function (f) { f.hidden = f.id !== b.dataset.v }) } });
+document.querySelectorAll(".fm").forEach(function (f) { f.onsubmit = function (e) { e.preventDefault(); var m = f.querySelector(".msg"); if (f.id === "cong" && $("#c9").value !== $("#c10").value) { m.textContent = "As senhas não conferem. Confira e tente de novo." } else { m.textContent = f.dataset.ok } m.hidden = false } });
+function show(t) { if (!/^(adocao|doacao|missao|entrar)$/.test(t)) t = "adocao";["adocao", "doacao", "missao", "entrar"].forEach(function (n) { $("#" + n).hidden = n !== t }); document.querySelectorAll("nav button").forEach(function (b) { b.setAttribute("aria-selected", b.dataset.t === t) }) }
+document.querySelectorAll("nav button").forEach(function (b) { b.onclick = function () { show(b.dataset.t); location.hash = b.dataset.t; window.scrollTo(0, 0) } });
+window.addEventListener("hashchange", function () { show(location.hash.slice(1)) }); show(location.hash.slice(1));

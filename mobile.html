@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Pet&amp;Cat — modelo mobile</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+
+<body>
+    <div class="phone">
+        <div class="top"><img src="assets/logo.webp" alt="Logo Pet&amp;Cat">
+            <div>Pet&amp;Cat<small>Adote · Doe · Ajude</small></div>
+        </div>
+        <div class="scr" id="scr">
+
+            <section id="adocao">
+                <div class="hero a">
+                    <h1>Adote um amigo</h1>
+                    <p>Dê um lar cheio de amor. Mude uma vida hoje.</p>
+                </div>
+                <h2 style="margin-top:0">Como adotar</h2>
+                <div class="c steps">
+                    <div class="st">
+                        <div class="num">1</div>
+                        <div>
+                            <h3>Preencha o formulário</h3>de adoção
+                        </div>
+                    </div>
+                    <div class="st">
+                        <div class="num">2</div>
+                        <div>
+                            <h3>Entrevista</h3>para combinar com seu pet
+                        </div>
+                    </div>
+                    <div class="st">
+                        <div class="num">3</div>
+                        <div>
+                            <h3>Adoção responsável</h3>e carinho garantido
+                        </div>
+                    </div>
+                </div>
+                <h2>Quem espera por você</h2>
+                <div class="chips"><button class="chip" data-f="todos" aria-pressed="true">Todos</button><button
+                        class="chip" data-f="cão" aria-pressed="false">🐶 Cães</button><button class="chip"
+                        data-f="gato" aria-pressed="false">🐱 Gatos</button></div>
+                <div id="pets"></div>
+                <p class="note">Animais de exemplo, só para ilustrar o modelo de tela.</p>
+            </section>
+
+            <section id="doacao" hidden>
+                <div class="hero d">
+                    <h1>Doar e ajudar</h1>
+                    <p>Cada gesto salva uma vidinha.</p>
+                </div>
+                <div class="c pr">
+                    <div class="ic">📦</div>
+                    <div class="in">
+                        <h3>Como doar</h3>Ração, cobertores e brinquedos
+                    </div>
+                </div>
+                <div class="c pr">
+                    <div class="ic">🙋</div>
+                    <div class="in">
+                        <h3>Quero ajudar</h3>Seja voluntário em feiras de adoção
+                    </div>
+                </div>
+                <h2>Campanhas abertas</h2>
+                <div id="camps"></div>
+                <div class="pix">
+                    <h3>Ajuda financeira por PIX</h3><code id="pixk">ajuda@petcat.org</code><button class="btn"
+                        id="copy">Copiar chave</button>
+                </div>
+                <p class="note">Campanhas e chave PIX de exemplo.</p>
+            </section>
+
+            <section id="missao" hidden>
+                <div class="hero m">
+                    <h1>Missão, visão e valores</h1>
+                    <p>Conectamos animais, ONGs e pessoas que querem adotar ou ajudar.</p>
+                </div>
+                <div class="big">
+                    <h3>🎯 Missão</h3>
+                    <p>Promover o bem-estar animal por meio da adoção responsável e da arrecadação de alimentos para
+                        ONGs, de forma transparente, segura e eficiente, reduzindo o abandono e a fome entre animais
+                        domésticos.</p>
+                </div>
+                <div class="big v">
+                    <h3>🌟 Visão</h3>
+                    <p>Ser referência nacional entre adotantes, doadores e ONGs, com credibilidade, transparência e
+                        impacto social: nenhum animal sem alimento ou sem um lar seguro.</p>
+                </div>
+                <h2>Valores</h2>
+                <div id="vals"></div>
+            </section>
+
+            <section id="entrar" hidden>
+                <div class="hero e">
+                    <h1>Entrar</h1>
+                    <p>Adotante, ONG ou cadastro de ONG.</p>
+                </div>
+                <div class="segs"><button class="seg" data-v="lad" aria-pressed="true">Adotante</button><button
+                        class="seg" data-v="long" aria-pressed="false">ONG</button><button class="seg" data-v="cong"
+                        aria-pressed="false">Cadastrar ONG</button></div>
+                <form class="fm" id="lad" data-ok="Login de exemplo realizado! Você iria para a área do adotante.">
+                    <h2>Login de adotante</h2><label for="a1">E-mail</label><input id="a1" type="email"
+                        placeholder="voce@email.com" required>
+                    <label for="a2">Senha</label><input id="a2" type="password" required><button class="btn"
+                        type="submit">Entrar</button>
+                    <p class="note">Cadastro de adotante confirmado por e-mail.</p>
+                    <div class="msg" role="status" hidden></div>
+                </form>
+                <form class="fm" id="long" data-ok="Login de exemplo realizado! Você iria para o painel da ONG." hidden>
+                    <h2>Login de ONG</h2><label for="o1">E-mail da ONG</label><input id="o1" type="email"
+                        placeholder="contato@suaong.org" required>
+                    <label for="o2">Senha</label><input id="o2" type="password" required><button class="btn"
+                        type="submit">Entrar no painel</button>
+                    <div class="msg" role="status" hidden></div>
+                </form>
+                <form class="fm" id="cong"
+                    data-ok="Cadastro de exemplo enviado! A ONG passaria por análise e você receberia um e-mail."
+                    hidden>
+                    <h2>Cadastro de ONG</h2>
+                    <label for="c1">Nome da ONG</label><input id="c1" required><label for="c2">CNPJ</label><input
+                        id="c2" inputmode="numeric" placeholder="00.000.000/0000-00" required>
+                    <label for="c3">Responsável</label><input id="c3" required><label for="c4">E-mail</label><input
+                        id="c4" type="email" required>
+                    <label for="c5">Telefone ou WhatsApp</label><input id="c5" type="tel" required>
+                    <div class="two">
+                        <div><label for="c6">Cidade</label><input id="c6" required></div>
+                        <div><label for="c7">UF</label><input id="c7" maxlength="2" required></div>
+                    </div>
+                    <label for="c8">Sobre a ONG</label><textarea id="c8" rows="3"></textarea>
+                    <label for="c9">Senha</label><input id="c9" type="password" minlength="8"
+                        placeholder="Mínimo de 8 caracteres" required>
+                    <label for="c10">Confirmar senha</label><input id="c10" type="password" minlength="8" required>
+                    <label class="chk" style="margin-top:12px"><input type="checkbox" required> Aceito os termos de
+                        uso</label>
+                    <button class="btn" type="submit">Cadastrar ONG</button>
+                    <div class="msg" role="status" hidden></div>
+                </form>
+                <p class="note" style="text-align:center">Telas de exemplo: nenhum dado é enviado ou salvo.</p>
+            </section>
+        </div>
+        <nav class="tabs" role="tablist" aria-label="Navegação">
+            <button role="tab" data-t="adocao" aria-selected="true"><span>🐾</span>Adoção</button>
+            <button role="tab" data-t="doacao" aria-selected="false"><span>💛</span>Doação</button>
+            <button role="tab" data-t="missao" aria-selected="false"><span>🌿</span>Sobre</button>
+            <button role="tab" data-t="entrar" aria-selected="false"><span>🔑</span>Entrar</button>
+        </nav>
+    </div>
+    <script src="js/mobile.js"></script>
+</body>
+
+</html>

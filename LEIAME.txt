@@ -1,0 +1,17 @@
+Pet&Cat - modelo de site (TCC)
+
+Como abrir
+- index.html  -> versao para computador (abas: Adocao, Doacao, Missao/Visao/Valores e Entrar)
+- mobile.html -> versao para celular (barra de abas na parte de baixo)
+Basta dar dois cliques no arquivo; funciona no navegador, sem instalar nada.
+
+Estrutura
+- css/site.css, css/mobile.css   estilos (paleta no inicio de cada arquivo, em :root)
+- js/site.js, js/mobile.js       dados de exemplo (animais, campanhas, valores) e comportamento das abas e formularios
+- assets/logo.webp               logo Pet&Cat
+
+Observacoes
+- Os animais, ONGs, campanhas e a chave PIX sao exemplos; troque no inicio dos arquivos .js.
+- Os formularios de login e cadastro sao apenas modelo de tela: nenhum dado e enviado ou salvo.
+- A fonte Poppins e carregada do Google Fonts (precisa de internet; sem ela o site usa a fonte padrao).
+- Paleta: verde-salvia #a8bfa3, creme #f4f6ea, pessego #f8e3c8, marrom #6b3a1f.
